@@ -1,0 +1,13 @@
+{
+  "name": "@xiangnanscu/test-env",
+  "version": "0.10.0",
+  "scripts": {
+    "commit": "git add . && git commit -am \"${msg-message: } $(date +%Y-%m-%d_%H:%M:%S)\"",
+    "push": "yarn commit && git push origin master --push-option=${push_option:-nothing}",
+    "test": "env-cmd -e base,secret,development echo test"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
+  },
+  "dependencies": {}
+}
